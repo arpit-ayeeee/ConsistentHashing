@@ -46,40 +46,6 @@ Finds the appropriate node for an item based on the item’s hash value.
 2. Add storage nodes to the hash ring.
 3. Assign items to nodes based on consistent hashing.
 
-### Example
-
-```go
-package main
-
-import (
-	"fmt"
-)
-
-func main() {
-	// Initialize storage nodes
-	storageNodes := []*StorageNode{
-		{Name: "A", Host: "239.67.52.72"},
-		{Name: "B", Host: "137.70.131.229"},
-		{Name: "C", Host: "98.5.87.182"},
-		{Name: "D", Host: "11.225.158.95"},
-		{Name: "E", Host: "203.187.116.210"},
-	}
-
-	// Create a consistent hash ring with 50 slots
-	ch := NewConsistentHash(50)
-	for _, node := range storageNodes {
-		key := ch.AddNode(node)
-		fmt.Printf("Added node %s at key %d\n", node.Name, key)
-	}
-
-	// Assign files to nodes
-	files := []string{"f1.txt", "f2.txt", "f3.txt", "f4.txt", "f5.txt"}
-	for _, file := range files {
-		node := ch.Assign(file)
-		fmt.Printf("File %s is assigned to node %s\n", file, node.Name)
-	}
-}
-```
 
 ### Output Example
 

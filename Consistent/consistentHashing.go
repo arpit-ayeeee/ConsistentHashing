@@ -74,11 +74,11 @@ func (ch *ConsistentHash) Assign(item string) *StorageNode {
 
 func main() {
 	storageNodes := []*StorageNode{
-		{Name: "A", Host: "239.67.52.72"},
-		{Name: "B", Host: "137.70.131.229"},
-		{Name: "C", Host: "98.5.87.182"},
-		{Name: "D", Host: "11.225.158.95"},
-		{Name: "E", Host: "203.187.116.210"},
+		{Name: "A", Host: ""},
+		{Name: "B", Host: ""},
+		{Name: "C", Host: ""},
+		{Name: "D", Host: ""},
+		{Name: "E", Host: ""},
 	}
 
 	ch := NewConsistentHash(50)
