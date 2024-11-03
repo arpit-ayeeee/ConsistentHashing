@@ -70,7 +70,3 @@ This implementation uses SHA-256 to generate a hash from the node's host and the
 
 - This implementation assumes `totalSlots` is a manageable number for the system, where `hashFn` maps nodes and items uniformly across the ring.
 - For production-grade systems, consider adding virtual nodes or replicas for better load balancing across nodes.
-
-## License
-
-This code is open-source and available under the MIT License.
