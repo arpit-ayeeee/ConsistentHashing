@@ -69,6 +69,7 @@ var storageNodes = []StorageNode{
 func hashFn(key string) int {
 	h := fnv.New32a()
 	h.Write([]byte(key))
+	fmt.Printf("Hash Values %t, %d", h != nil, h.Sum32())
 	return int(h.Sum32()) % len(storageNodes)
 }
 
